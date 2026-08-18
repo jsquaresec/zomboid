@@ -1,0 +1,44 @@
+services:
+  zomboid:
+    image: sknnr/zomboid-dedicated-server:latest
+    container_name: zomboid-server
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MAX_MEMORY: ${MAX_MEMORY:-5g}
+      MAX_PLAYERS: ${MAX_PLAYERS:-16}
+      SERVER_NAME: ${SERVER_NAME:-MayheM Zomboid}
+      SERVER_PASSWORD: ${SERVER_PASSWORD:-}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      GAME_PORT: 16261
+      DIRECT_PORT: 16262
+      PUBLIC: ${PUBLIC:-true}
+      PVP: ${PVP:-true}
+      PAUSE_EMPTY: ${PAUSE_EMPTY:-true}
+      AUTOSAVE_INTERVAL: ${AUTOSAVE_INTERVAL:-15}
+      BACKUPS_PERIOD: ${BACKUPS_PERIOD:-120}
+      BACKUPS_COUNT: ${BACKUPS_COUNT:-12}
+      PING_LIMIT: ${PING_LIMIT:-400}
+      STEAM_VAC: ${STEAM_VAC:-true}
+      MOD_IDS: ${MOD_IDS:-}
+      MOD_NAMES: ${MOD_NAMES:-}
+      BETA_BRANCH: ${BETA_BRANCH:-}
+    ports:
+      - "16261:16261/udp"
+      - "16262:16262/udp"
+    volumes:
+      - zomboid-server:/home/steam/zomboid
+      - zomboid-data:/home/steam/zomboid_data
+    stop_grace_period: 2m
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+
+volumes:
+  zomboid-server:
+    name: zomboid-server
+  zomboid-data:
+    name: zomboid-data
