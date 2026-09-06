@@ -1,3 +1,13 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/jsquaresec/jsquaresec/main/assets/j2sec-banner.svg" alt="J2SEC banner" width="100%" />
+
+<br>
+
+<img src="https://raw.githubusercontent.com/jsquaresec/jsquaresec/main/assets/j2sec-logo.svg" alt="J2SEC logo" width="110" />
+
+</div>
+
 # Project Zomboid VPS Server
 
 Docker deployment for a Project Zomboid dedicated server on Ubuntu, tuned for **4 vCPU / 8 GB RAM**.
@@ -5,7 +15,7 @@ Docker deployment for a Project Zomboid dedicated server on Ubuntu, tuned for **
 ## VPS deployment
 
 ```bash
-git clone https://github.com/MayheM-Sec/zomboid.git
+git clone https://github.com/jsquaresec/zomboid.git
 cd zomboid
 chmod +x scripts/*.sh
 sudo ./scripts/install.sh
@@ -55,3 +65,11 @@ To inspect the volumes:
 ```bash
 docker volume ls | grep zomboid
 ```
+
+## Links
+
+[![GitHub](https://img.shields.io/badge/GitHub-jsquaresec-111111?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jsquaresec)
+[![X](https://img.shields.io/badge/X-@j2__sec-111111?style=for-the-badge&logo=x&logoColor=white)](https://x.com/j2_sec?s=11)
+[![OTD Studios](https://img.shields.io/badge/Discord-OTD%20Studios-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/nz5jE7PVh7)
+[![Evolution Gaming](https://img.shields.io/badge/Discord-Evolution%20Gaming-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/rjf9ZYMARN)
+[![Website](https://img.shields.io/badge/Web-onlythedemons.com-168BFF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://onlythedemons.com)
